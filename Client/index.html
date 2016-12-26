@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>A Sample Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="index.module.js"></script>
 </head>
 <body>
+<div ng-app="myApp" ng-controller="helemt">
+ <p> Our Devices:</p>
+ <ul>
+    <li ng-repeat="helmet in helmets">
+        {{ helmet.id +'  '+ helmet.name +'  '+ helmet.location +'  '+ helmet.lastUpdate }}
+    </li>
+</ul>
 
+</div>
 </body>
 </html>

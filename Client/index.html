@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>A Sample Project</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="index.module.js"></script>
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<div ng-app="myApp" ng-controller="helemt">
- <p> Our Devices:</p>
- <ul>
-    <li ng-repeat="helmet in helmets">
-        {{ helmet.id +'  '+ helmet.name +'  '+ helmet.location +'  '+ helmet.lastUpdate }}
-    </li>
-</ul>
-
+<div ng-app="myApp" ng-controller="helemtController">
+    <div class="Container">
+        <p> Our Devices:</p>
+        <ul>
+            <li ng-repeat="helmet in helmets">
+                {{ helmet.id +' '+ helmet.name +' '+ helmet.location +' '+ helmet.lastUpdate }}
+            </li>
+        </ul>
+    </div>
 </div>
+
+<!-- The jQuery library -->
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+<!-- The Angular library -->
+<script src="../node_modules/angular/angular.js"></script>
+
+<!-- OwnScript -->
+<script src="index.module.js"></script>
 </body>
 </html>

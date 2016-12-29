@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <title>A Sample Project</title>
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<div ng-app="myApp" ng-controller="helemtController">
+<div>
     <div class="Container">
         <p> Our Devices:</p>
-        <ul>
-            <li ng-repeat="helmet in helmets">
-                {{ helmet.id +' '+ helmet.name +' '+ helmet.location +' '+ helmet.lastUpdate }}
-            </li>
-        </ul>
+        <helemt-list></helemt-list>
     </div>
 </div>
 
@@ -25,5 +21,8 @@
 
 <!-- OwnScript -->
 <script src="index.module.js"></script>
+<script src="HelmetList/helmet-list.module.js"></script>
+<script src="HelmetList/helmet-list.component.js"></script>
+
 </body>
 </html>

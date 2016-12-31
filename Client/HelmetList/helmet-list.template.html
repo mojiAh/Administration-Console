@@ -1,5 +1,21 @@
-<ul>
-    <li ng-repeat="helmet in $ctrl.helmets">
-        {{ helmet.id +' '+ helmet.name +' '+ helmet.location +' '+ helmet.lastUpdate }}
-    </li>
-</ul>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <!--Sidebar content-->
+
+            Search: <input ng-model="$ctrl.query" />
+
+        </div>
+        <div class="col-md-10">
+            <!--Body content-->
+
+            <ul class="helmets">
+                <li ng-repeat="helmet in $ctrl.helmets | filter:$ctrl.query">
+                    <span>{{helmet.id}}</span>
+                    <p>{{ helmet.name +' '+ helmet.location +' '+ helmet.lastUpdate}}</p>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>

@@ -8,5 +8,7 @@ angular.module('helmetList').component('helemtList', {
             {id: '2', name: 'mikko', location: 'Tampere', lastUpdate: '12:21'},
             {id: '3', name: 'mirja', location: 'Tampere', lastUpdate: '12:34'}
         ];
+
+        this.orderProp = 'name';
     }
 });

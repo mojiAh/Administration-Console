@@ -1,5 +1,5 @@
 [
-  {"id": 1, "name": "mojtaba", "location": "Tampere", "lastUpdate": "12:00"},
-  {"id": 2, "name": "mikko", "location": "Tampere", "lastUpdate": "12:21"},
-  {"id": 3, "name": "mirja", "location": "Tampere", "lastUpdate": "12:34" }
+  {"id": 1, "name": "mojtaba", "location": "Tampere", "lastUpdate": "12:00", "imageUrl": "img/helmets/helmet.png"},
+  {"id": 2, "name": "mikko", "location": "Tampere", "lastUpdate": "12:21" ,"imageUrl": "img/helmets/helmet.png"},
+  {"id": 3, "name": "mirja", "location": "Tampere", "lastUpdate": "12:34","imageUrl": "img/helmets/helmet.png" }
 ]

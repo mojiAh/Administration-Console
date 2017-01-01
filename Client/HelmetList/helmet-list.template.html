@@ -23,9 +23,13 @@
             <!--Body content-->
 
             <ul class="helmets">
-                <li ng-repeat="helmet in $ctrl.helmets | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-                    <span>{{helmet.id}}</span>
-                    <p>{{ helmet.name +' '+ helmet.location +' '+ helmet.lastUpdate}}</p>
+                <li ng-repeat="helmet in $ctrl.helmets | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
+                    <a href="#/Helmets/{{helmet.id}}" class="thumb">
+                        <img ng-src="{{helmet.imageUrl}}" alt="{{helmet.name}}">
+                    </a>
+                    <a href="#/Helmets/{{helmet.id}}">{{helmet.name}}</a>
+                    <p>{{helmet.location}}</p>
+                    <p>{{helmet.lastUpdate}}</p>
                 </li>
             </ul>
 

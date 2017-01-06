@@ -1,3 +1,4 @@
+<p> Our Devices:</p>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
@@ -24,10 +25,10 @@
 
             <ul class="helmets">
                 <li ng-repeat="helmet in $ctrl.helmets | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
-                    <a href="#/Helmets/{{helmet.id}}" class="thumb">
+                    <a href="#!/helmets/{{helmet.id}}" class="thumb">
                         <img ng-src="{{helmet.imageUrl}}" alt="{{helmet.name}}">
                     </a>
-                    <a href="#/Helmets/{{helmet.id}}">{{helmet.name}}</a>
+                    <a href="#!/helmets/{{helmet.id}}">{{helmet.name}}</a>
                     <p>{{helmet.location}}</p>
                     <p>{{helmet.lastUpdate}}</p>
                 </li>

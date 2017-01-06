@@ -6,7 +6,7 @@ angular.module('helmetList').component('helemtList', {
         function HelmetListController($http) {
             var self = this;
             self.orderProp = 'id';
-            $http.get('helmetList/helmets.json').then(function (response) {
+            $http.get('/helmetList').then(function (response) {
                 self.helmets = response.data;
             });
         }

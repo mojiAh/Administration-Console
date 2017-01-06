@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="shhApp">
 <head>
     <meta charset="UTF-8">
     <title>A Sample Project</title>
@@ -7,8 +7,7 @@
     <link href="app.css" rel="stylesheet"/>
 </head>
 <body>
-<p> Our Devices:</p>
-<helemt-list></helemt-list>
+<div ng-view></div>
 
 
 <!-- The jQuery library -->
@@ -19,9 +18,11 @@
 <script src="../node_modules/angular-route/angular-route.js"></script>
 
 <!-- OwnScript -->
-<script src="index.module.js"></script>
-<script src="HelmetList/helmet-list.module.js"></script>
-<script src="HelmetList/helmet-list.component.js"></script>
-
+<script src="app.module.js"></script>
+<script src="app.config.js"></script>
+<script src="helmetList/helmet-list.module.js"></script>
+<script src="helmetList/helmet-list.component.js"></script>
+<script src="helmet-detail/helmet-detail.module.js"></script>
+<script src="helmet-detail/helmet-detail.component.js"></script>
 </body>
 </html>

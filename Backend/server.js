@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/smartHardHat');
 
 var helmets = require('./routes/helmets');
-app.use('/helmetList', helmets);
+app.use('/helmets', helmets);
 
 // make server port
 var PORT= process.env.PORT || 3000;

@@ -10,5 +10,5 @@ var helmetSchema = new mongoose.Schema({
     lastUpdate: { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model('helmet', helmetSchema);
+module.exports = mongoose.model('helmetList', helmetSchema);
 

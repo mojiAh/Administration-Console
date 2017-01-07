@@ -4,7 +4,11 @@ var mongoose = require('mongoose');
 // Create a schema
 var helmetSchema = new mongoose.Schema({
     id: Number,
-    name: String,
+    firstName: { type: String, required: true },
+    middleName: String,
+    lastName: String,
+    title: String,
+    description: String,
     location: String,
     imageUrl: String,
     lastUpdate: { type: Date, default: Date.now },

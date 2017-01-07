@@ -11,6 +11,9 @@ angular.module('shhApp').
         when('/helmets', {
             template: '<helemt-list></helemt-list>'
         }).
+        when('/addHelmet', {
+            template: '<add-helmet></add-helmet>'
+        }).
         when('/helmets/:helmetId', {
             template: '<helmet-detail></helmet-detail>'
         }).otherwise('/helmets');

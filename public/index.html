@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>Smart Hard Hat</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="app.css" rel="stylesheet"/>
+    <!-- Defines CSS necessary for animations -->
+    <link rel="stylesheet" href="app.animations.css" />
 </head>
 <body>
 <div ng-view></div>
@@ -16,6 +19,9 @@
 <!-- The Angular library -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.4.0.js"></script>
 
 <!-- OwnScript -->
 <script src="app.module.js"></script>
@@ -24,5 +30,9 @@
 <script src="helmetList/helmet-list.component.js"></script>
 <script src="helmet-detail/helmet-detail.module.js"></script>
 <script src="helmet-detail/helmet-detail.component.js"></script>
+<script src="add-helmet/add-helmet.module.js"></script>
+<script src="add-helmet/add-helmet.component.js"></script>
+<!-- Defines JavaScript animations -->
+<script src="app.animations.js"></script>
 </body>
 </html>

@@ -6,9 +6,13 @@ angular.module('helmetList').component('helemtList', {
         function HelmetListController($http) {
             var self = this;
             self.orderProp = 'id';
-            $http.get('/helmets').then(function (response) {
+            $http.get('/helmets')
+                .then(function (response) {
                 self.helmets = response.data;
-            });
+                }, function errorCallback(err) {
+                        console.log(err);
+                    }
+                );
 
 
         }

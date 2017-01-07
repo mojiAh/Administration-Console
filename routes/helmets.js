@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-//
-var mongoose = require('mongoose');
 var helmet = require('../models/helmets');
 
 
@@ -17,11 +15,10 @@ router.get('/', function(req, res, next) {
 
 /* POST /helmets */
 router.post('/', function(req, res, next) {
-    helmet.create(req.body, function (err, post) {
-        if (err) return next(err);
-        res.json(post);
-    });
+   console.log(req.body);
+
 });
+
 
 /* PUT /todos/:id */
 router.put('/:id', function(req, res, next) {

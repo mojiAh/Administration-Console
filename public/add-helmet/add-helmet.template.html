@@ -1,0 +1,24 @@
+<div id='main' class="container">
+    <div class="col-md-offset-4 col-md-4">
+            <form class="form-horizontal" role="form" >
+                <div class="form-group">
+                    <input required type="text" class="form-control" placeholder="First name" ng-model="$ctrl.newHelmet.firstName">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="middle name" ng-model="$ctrl.newHelmet.middleName">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Last name" ng-model="$ctrl.newHelmet.lastName">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Title" ng-model="$ctrl.newHelmet.title">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="description" ng-model="$ctrl.newHelmet.description">
+                </div>
+                <input class="btn submit-btn btn-success" type="submit" value="Add" ng-click="$ctrl.addHelmet()"/>
+                <a href="#!/helmetList" type="button"class="btn btn-danger">Cancel</a>
+            </form>
+    </div>
+</div>
+

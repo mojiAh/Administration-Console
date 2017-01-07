@@ -1,32 +1,17 @@
 {
-  "name": "tamk",
-  "version": "1.0.0",
-  "description": "",
+  "name": "backendapp",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Backend/server.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "angular": "^1.6.1",
-    "angular-mocks": "^1.6.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-es2015": "^6.18.0",
-    "jasmine": "^2.5.2",
-    "karma": "^1.3.0",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-jasmine": "^1.1.0",
-    "karma-phantomjs-launcher": "^1.0.2",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
+    "start": "node ./bin/www"
   },
   "dependencies": {
-    "angular": "^1.6.1",
-    "angular-route": "^1.6.1",
-    "bootstrap": "^3.3.7",
-    "express": "^4.14.0",
-    "jquery": "^3.1.1",
-    "mongoose": "^4.7.6"
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "~2.5.2",
+    "express": "~4.14.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
   }
 }

@@ -1,11 +1,6 @@
 'use strict';
 
-angular.module('shhApp', [
-    'ngRoute',
-    'helmetDetail',
-    'helmetList',
-    'addHelmet',
-    'ngAnimate',
-    'ngSanitize',
-    'ui.bootstrap'
+angular.module('consoleApp', [
+    'ui.router',
+    'users'
 ]);

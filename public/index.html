@@ -1,38 +1,27 @@
 <!DOCTYPE html>
-<html ng-app="shhApp">
+<html ng-app="consoleApp">
 <head>
     <meta charset="UTF-8">
-    <title>Smart Hard Hat</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="app.css" rel="stylesheet"/>
-    <!-- Defines CSS necessary for animations -->
-    <link rel="stylesheet" href="app.animations.css" />
+    <title>Simple Console Admin</title>
+
 </head>
 <body>
-<div ng-view></div>
+<div ui-view></div>
 
 <!-- The jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <!-- The Angular library -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
-<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.4.0.js"></script>
+<script src="//unpkg.com/angular@1.6.1/angular.js"></script>
+<script src="//unpkg.com/angular-ui-router@1.0.0-rc.1/release/angular-ui-router.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.js"></script>
+
 
 <!-- OwnScript -->
 <script src="app.module.js"></script>
 <script src="app.config.js"></script>
-<script src="helmetList/helmet-list.module.js"></script>
-<script src="helmetList/helmet-list.component.js"></script>
-<script src="helmet-detail/helmet-detail.module.js"></script>
-<script src="helmet-detail/helmet-detail.component.js"></script>
-<script src="add-helmet/add-helmet.module.js"></script>
-<script src="add-helmet/add-helmet.component.js"></script>
-<!-- Defines JavaScript animations -->
-<script src="app.animations.js"></script>
+<script src="users/users-list.module.js"></script>
+<script src="users/users-list.component.js"></script>
+<script src="users/users-list.service.js"></script>
 </body>
 </html>

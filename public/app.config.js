@@ -1,21 +1,17 @@
 'use strict';
 
-angular.module('shhApp').
-    config(['$locationProvider' ,'$routeProvider',
+angular.module('consoleApp').
+    config(function config($stateProvider, $urlRouterProvider) {
 
-        function config($locationProvider, $routeProvider) {
+    $urlRouterProvider.otherwise('/');
 
-        $locationProvider.hashPrefix('!');
+    $stateProvider
+    // helmet views
+        .state({
+            name: 'home',
+            url: '/',
+            component: 'usersList'
 
-        $routeProvider.
-        when('/helmets', {
-            template: '<helemt-list></helemt-list>'
-        }).
-        when('/addHelmet', {
-            template: '<add-helmet></add-helmet>'
-        }).
-        when('/helmets/:helmetId', {
-            template: '<helmet-detail></helmet-detail>'
-        }).otherwise('/helmets');
-    }
-]);
+        });
+
+});

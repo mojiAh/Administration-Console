@@ -1,39 +1,49 @@
-<p> Main page of console:</p>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2">
-            <!--Sidebar content-->
-
-            <p>
-                Search:
-                <input ng-model="$ctrl.query">
-            </p>
-
-            <p>
-                Sort by:
-                <select ng-model="$ctrl.orderProp">
-                    <option value="id">ID</option>
-                    <option value="name">Name</option>
-                    <option value="location">Location</option>
-                    <option value="lastUpdate">Last Update</option>
-                </select>
-            </p>
-
+        <div class="col-md-offset-1 col-md-10">
+            <div class="row">
+            <!--controlBar content-->
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="search">SEARCH:</label>
+                        <input type="text" ng-model="$ctrl.query" id="search">
+                    </div>
+                    <div class="form-group">
+                        <label for="sortBy">SORT:</label>
+                        <select ng-model="$ctrl.orderProp" id="sortBy">
+                            <option value="id">ID</option>
+                            <option value="name">Name</option>
+                            <option value="location">Location</option>
+                            <option value="lastUpdate">Last Update</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Title</th>
+                        <th>Location</th>
+                        <th>Last tiem update</th>
+                        <th width="100">
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="user in $ctrl.users | filter:$ctrl.query | orderBy:$ctrl.orderProp" >
+                        <td></td>
+                        <td>{{user.firstName}}</td>
+                        <td>{{user.lastName}}</td>
+                        <td>{{user.title}}</td>
+                        <td>{{user.location}}</td>
+                        <td>{{user.lastUpdate}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="col-md-10">
-            <!--Body content-->
-
-            <ul class="users">
-                <li ng-repeat="user in $ctrl.users | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
-                    <a href="#!/users/{{user.id}}" class="thumb">
-                        <img ng-src="{{user.imageUrl}}" alt="{{user.name}}">
-                    </a>
-                    <a href="#!/users/{{user.id}}">{{user.name}}</a>
-                    <p>{{user.location}}</p>
-                    <p>{{user.lastUpdate}}</p>
-                </li>
-            </ul>
-
         </div>
-    </div>
 </div>

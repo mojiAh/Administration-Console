@@ -4,17 +4,21 @@ angular.module('users')
     .component('usersList', {
         templateUrl: 'users/users-list.template.html',
 
-    controller: ['usersService',
+    controller: ['users', '$window',
 
-        function usersListController(usersService) {
+        function usersListController(users , $window) {
+
             var self = this;
             self.orderProp = 'name';
-            self.users= usersService.query();
-            self.remove = function(index){
-                var users = self.users[index];
-                usersService.remove({id: helmet._id}, function(){
-                    self.users.splice(index, 1);
-                });
+
+            self.users= users.query();
+
+            self.removeUser = function(user){
+                if (confirm('Do you want to delete this user?')) {
+
+                    users.delete({id: user._id});
+                    self.users = users.query();
+                }
             }
         }
     ]

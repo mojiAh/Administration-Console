@@ -2,9 +2,10 @@
 
 angular.module('users')
 
-    .factory('usersService', ['$resource',
+    .factory('users', ['$resource',
         function($resource){
         return $resource('/systemUsers/:id', null, {
-            'update': { method:'PUT' }
+            'update': { method:'PUT' },
+            'delete': { method: 'DELETE', params: {id: '@_id'} }
         });
     }]);

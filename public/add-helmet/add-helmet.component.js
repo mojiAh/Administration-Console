@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('addHelmet').component('addHelmet', {
-    templateUrl:'add-helmet/add-helmet.template.html',
+    templateUrl:'add-helmet/add-user.template.html',
     controller: [ '$http',
         function addHelmetController ($http) {
             console.log('Im here');

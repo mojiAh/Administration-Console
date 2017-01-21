@@ -8,10 +8,15 @@ angular.module('consoleApp').
     $stateProvider
     // helmet views
         .state({
-            name: 'home',
+            name: 'users',
             url: '/',
             component: 'usersList'
 
+        })
+        .state({
+            name: 'newUser',
+            url: '/users/new',
+            component: 'addUser'
         });
 
 });

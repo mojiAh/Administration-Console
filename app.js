@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var helmets = require('./routes/helmets');
+var systemUsers = require('./routes/systemUsers');
 
 // load mongoose package
 var mongoose = require('mongoose');
@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/helmets', helmets);
+app.use('/systemUsers', systemUsers);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -61,12 +61,12 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+app.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: {}
+    });
 });
 
 

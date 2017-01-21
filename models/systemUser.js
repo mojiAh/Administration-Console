@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 
 // Create a schema
-var helmetSchema = new mongoose.Schema({
+var systemUserSchema = new mongoose.Schema({
     id: Number,
     firstName: String,
     middleName: String,
@@ -11,8 +11,8 @@ var helmetSchema = new mongoose.Schema({
     description: String,
     location: String,
     imageUrl: String,
-    lastUpdate: { type: Date, default: Date.now },
+    lastUpdate: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('helmets', helmetSchema);
+module.exports = mongoose.model('systemUser', systemUserSchema);
 

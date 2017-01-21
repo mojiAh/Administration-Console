@@ -6,15 +6,14 @@ angular.module('addUser')
 
         templateUrl:'users/AddUser/add-user.template.html',
 
-        controller: [ '$http',
-        function addUserController ($http) {
+        controller: [ '$http', '$window',
+        function addUserController ($http, $window) {
 
             var self = this;
 
             this.addUser = function () {
-
-                $http.post('/users', this.newUser)
-
+                $http.post('/systemUsers', this.newUser)
+                $window.location.href = ''; //redirect to home
             }
         }
     ]

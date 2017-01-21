@@ -1,6 +1,6 @@
 <div id='main' class="container">
     <div class="col-md-offset-4 col-md-4">
-            <form class="form-horizontal" role="form" >
+            <form class="form-horizontal" role="form" ng-submit="$ctrl.addUser()">
                 <div class="form-group">
                     <input required type="text" class="form-control" placeholder="First name" ng-model="$ctrl.newUser.firstName">
                 </div>
@@ -16,7 +16,7 @@
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="description" ng-model="$ctrl.newUser.description">
                 </div>
-                <input class="btn submit-btn btn-success" type="submit" value="Add" ng-click="$ctrl.addUser()"/>
+                <input class="btn submit-btn btn-success" type="submit" value="Add User" />
                 <a ui-sref="users" type="button"class="btn btn-danger">Cancel</a>
             </form>
     </div>

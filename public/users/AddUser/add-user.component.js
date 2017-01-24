@@ -1,22 +1,23 @@
 'use strict';
 
-angular.module('addUser')
+angular.module('users')
 
     .component('addUser', {
 
         templateUrl:'users/AddUser/add-user.template.html',
 
-        controller: [ '$http', '$window',
-        function addUserController ($http, $window) {
+        controller:('addUserController' , [ 'usersService', '$state',
 
-            var self = this;
+            function (usersService, $state) {
 
+            this.newUser= new usersService();
             this.addUser = function () {
-                $http.post('/systemUsers', this.newUser)
-                $window.location.href = ''; //redirect to home
+                this.newUser.$save(function () {
+                    $state.go('users');
+                });
             }
         }
-    ]
+    ])
 });
 
 

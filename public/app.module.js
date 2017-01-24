@@ -2,6 +2,5 @@
 
 angular.module('consoleApp', [
     'ui.router',
-    'users',
-    'addUser'
+    'users'
 ]);

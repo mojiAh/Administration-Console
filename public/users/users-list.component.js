@@ -2,25 +2,26 @@
 
 angular.module('users')
     .component('usersList', {
+
         templateUrl: 'users/users-list.template.html',
 
-    controller: ['users', '$window',
+        controller:('usersListController' , ['usersService',
 
-        function usersListController(users , $window) {
+            function (usersService) {
 
-            var self = this;
-            self.orderProp = 'name';
+                var self = this;
+                self.orderProp = 'name';
 
-            self.users= users.query();
+                self.users= usersService.query();
 
-            self.removeUser = function(user){
-                if (confirm('Do you want to delete this user?')) {
+                self.removeUser = function(userID){
+                    if (confirm('Do you want to delete this user?')) {
 
-                    users.delete({id: user._id});
-                    self.users = users.query();
+                        usersService.remove({id: userID});
+                        self.users = usersService.query();
+                    }
                 }
             }
-        }
-    ]
-});
+        ])
+    });
 

@@ -75,3 +75,14 @@ h1 {
 .table-add:hover {
     color: #0b0;
 }
+.table-status{
+     color: #f00;
+     cursor: pointer;
+}
+.table-edit {
+    color: #194777;
+    cursor: pointer;
+}
+.table-edit:hover {
+    color: #0e08bb;
+}

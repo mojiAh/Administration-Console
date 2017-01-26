@@ -12,7 +12,7 @@ angular.module('consoleApp').
             component: 'usersList'
         })
         .state({
-            name: 'newUser',
+            name: 'addUser',
             url: '/users/new',
             component: 'addUser'
         })

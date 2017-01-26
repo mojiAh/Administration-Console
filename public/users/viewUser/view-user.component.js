@@ -6,7 +6,13 @@ angular.module('users')
 
         templateUrl:'users/viewUser/view-user.template.html',
 
-        controller:('viewUserController' , [])
+        controller:('viewUserController' , [ 'usersService', '$stateParams',
+
+            function (usersService, $stateParams) {
+
+                this.user= usersService.get({id: $stateParams.id });
+            }
+        ])
 });
 
 

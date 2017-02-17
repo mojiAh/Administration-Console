@@ -3,7 +3,7 @@
 angular.module('users')
     .component('usersList', {
 
-        templateUrl: 'users/users-list.template.html',
+        templateUrl: 'modules/users/users-list.template.html',
 
         controller:('usersListController' , ['usersService',
 

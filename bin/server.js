@@ -56,7 +56,7 @@ app.on('error', function(err) {
 });
 
 // shoutout to the user
-console.log('Hours started on port ' + port);
+console.log('Application started on port ' + port);
 
 // expose app
 exports = module.exports = app;

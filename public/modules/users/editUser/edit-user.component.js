@@ -3,7 +3,7 @@
 angular.module('users')
     .component('editUser', {
 
-        templateUrl:'users/editUser/edit-user.template.html',
+        templateUrl:'modules/users/editUser/edit-user.template.html',
 
         controller:('editUserController', [ 'usersService', '$state', '$stateParams',
 

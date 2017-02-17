@@ -5,7 +5,7 @@
     <title>Simple Console Admin</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="app.css" rel="stylesheet"/>
+    <link href="css/app.css" rel="stylesheet"/>
 </head>
 <body>
 <div ui-view></div>
@@ -19,21 +19,21 @@
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.js"></script>
 
 <!-- OwnScript -->
-<script src="app.module.js"></script>
-<script src="app.config.js"></script>
+<script src="js/app.module.js"></script>
+<script src="js/app.config.js"></script>
 
 <!-- list of user -->
-<script src="users/users-list.module.js"></script>
-<script src="users/users-list.component.js"></script>
-<script src="users/users-list.service.js"></script>
+<script src="modules/users/users-list.module.js"></script>
+<script src="modules/users/users-list.component.js"></script>
+<script src="modules/users/users-list.service.js"></script>
 
 <!--user component -->
-<script src="users/AddUser/add-user.component.js"></script>
-<script src="users/editUser/edit-user.component.js"></script>
-<script src="users/viewUser/view-user.component.js"></script>
+<script src="modules/users/AddUser/add-user.component.js"></script>
+<script src="modules/users/editUser/edit-user.component.js"></script>
+<script src="modules/users/viewUser/view-user.component.js"></script>
 
-<script src="graph/graph.directive.js"></script>
-<script src="googleMap/map.directive.js"></script>
+<script src="modules/graph/graph.directive.js"></script>
+<script src="modules/googleMap/map.directive.js"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
 <script src="https://d3js.org/d3.v3.min.js" type="text/javascript"></script>

@@ -4,7 +4,7 @@ angular.module('users')
 
     .component('addUser', {
 
-        templateUrl:'users/AddUser/add-user.template.html',
+        templateUrl:'modules/users/AddUser/add-user.template.html',
 
         controller:('addUserController' , [ 'usersService', '$state',
 

@@ -4,7 +4,7 @@ angular.module('users')
 
     .component('viewUser', {
 
-        templateUrl:'users/viewUser/view-user.template.html',
+        templateUrl:'modules/users/viewUser/view-user.template.html',
 
         controller:('viewUserController' , [ 'usersService', '$stateParams',
 

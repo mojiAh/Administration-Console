@@ -3,13 +3,13 @@ var mongoose = require('mongoose');
 
 // Create a schema
 var systemUserSchema = new mongoose.Schema({
-    id: Number,
-    firstName: String,
-    middleName: String,
-    lastName: String,
-    title: String,
-    description: String,
-    location: String,
+    id:  {type: Number, default: 0},
+    firstName: { type: String, default: ''},
+    middleName: { type: String, default: ''},
+    lastName: { type: String, default: ''},
+    title: { type: String, default: ''},
+    description: { type: String, default: ''},
+    location: { type: String, default: ''},
     imageUrl: String,
     lastUpdate: { type: Date, default: Date.now }
 });

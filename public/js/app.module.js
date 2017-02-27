@@ -2,5 +2,8 @@
 
 angular.module('consoleApp', [
     'ui.router',
-    'users'
+    'users',
+    'ngResource',
+    'ngMaterial',
+    'ngMdIcons'
 ]);

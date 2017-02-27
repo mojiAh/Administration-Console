@@ -3,6 +3,14 @@ var router = express.Router();
 
 var User = require('./model');
 
+
+router.get('/', function(req, res, next) {
+    User.find(function (err, systemUsers) {
+        if (err) return next(err);
+        res.json(systemUsers);
+    });
+});
+
 router.post('/login', function(req, res, next){
     User.findOne({username : req.body.username , password: req.body.password},function (err, post) {
         if (err) return next(err);

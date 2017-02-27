@@ -3,9 +3,28 @@
 angular.module('consoleApp').
     config(function config($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
+    // Specify your Client API domain here:
+
+    //STORMPATH_CONFIG.ENDPOINT_PREFIX = 'https://localhost.apps.stormpath.io';
+
+    $urlRouterProvider.otherwise('/welcome');
 
     $stateProvider
+        .state({
+            name: 'welcome',
+            url: '/welcome',
+            component: 'welcome'
+        })
+        .state({
+            name: 'register',
+            url: '/register',
+            component: 'register'
+        })
+        .state({
+            name: 'forgetPassword',
+            url: '/forgetPassword',
+            component: 'forgetPassword'
+        })
         .state({
             name: 'users',
             url: '/',
@@ -27,4 +46,14 @@ angular.module('consoleApp').
             component: 'viewUser'
         });
 
-});
+    })
+    /*
+    .run(function($stormpath) {
+        $stormpath.uiRouter({
+            loginState: 'welcome',
+            defaultPostLoginState: 'users'
+        });
+    })*/
+    ;
+
+

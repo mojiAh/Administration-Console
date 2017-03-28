@@ -1,0 +1,30 @@
+<div class="CardActionButtons" style="padding-top: 100px;" >
+    <md-content style="max-width: 300px; margin: auto;">
+        <div flex-xs="" flex-gt-sm="100" layout="column">
+            <md-card>
+                <md-card-header>
+                    <md-card-avatar>
+                        <img src="../../media/users/profile-icon-28.png">
+                    </md-card-avatar>
+                    <md-card-header-text>
+                        <span class="md-title">{{$ctrl.currentUser.name}}</span>
+                        <span class="md-subhead"></span>
+                    </md-card-header-text>
+                </md-card-header>
+
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Profile Detail</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>Username : {{$ctrl.currentUser.username}}</p>
+                    <p>Email : {{$ctrl.currentUser.email}}</p>
+                    <p>Name : {{$ctrl.currentUser.name}}</p>
+                </md-card-content>
+            </md-card>
+
+        </div>
+    </md-content>
+</div>
+

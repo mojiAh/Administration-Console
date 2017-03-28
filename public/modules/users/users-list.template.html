@@ -1,17 +1,9 @@
-<div class="container-fluid" style="padding-top: 70px">
-    <div class='span2 sidebar col-md-2'>
-        <h3>Left Sidebar</h3>
-        <ul class="nav nav-tabs nav-stacked">
-            <li><a href='#'>Another Link 1</a></li>
-            <li><a href='#'>Another Link 2</a></li>
-            <li><a href='#'>Another Link 3</a></li>
-        </ul>
-    </div>
+<div style="padding-top: 100px ">
     <div class="col-md-10">
-        <div class="row">
+        <div class="row" style="margin-bottom: 30px">
             <!--controlBar content-->
             <form class="form-inline">
-                <div class="form-group">
+                <div class="form-group" style="margin-left: 50px; margin-right: 100px;">
                     <label for="search">SEARCH:</label>
                     <input type="text" ng-model="$ctrl.query" id="search">
                 </div>
@@ -29,8 +21,8 @@
 
         <!-- Show list of users -->
         <div class="row">
-            <div id="table" class="table-editable table-responsive table-striped">
-                <span class="table-add glyphicon glyphicon-plus" ui-sref="addUser" ></span>
+            <div id="table" style=" overflow-x:auto;">
+                <!--<span class="table-add glyphicon glyphicon-plus" ui-sref="addUser" ></span>-->
                 <table class="table table-hover">
                     <thead>
                     <tr>
@@ -47,20 +39,20 @@
                     </thead>
                     <tbody>
                     <tr ng-repeat="user in $ctrl.users | filter:$ctrl.query | orderBy:$ctrl.orderProp" >
-                        <td>
-                            <span class="table-status glyphicon glyphicon-user" ui-sref="viewUser({id:user._id})"></span>
+                        <td ui-sref="viewUser({id:user._id})">
+                            <span class="table-status glyphicon glyphicon-user" ></span>
                             <!--TODO : change the status of user -->
                         </td>
-                        <td>{{user.firstName}}</td>
-                        <td>{{user.lastName}}</td>
-                        <td>{{user.title}}</td>
-                        <td>{{user.location}}</td>
-                        <td>{{user.lastUpdate}}</td>
-                        <td>
-                            <span class="table-edit glyphicon glyphicon-edit" ui-sref=" editUser({id:user._id}) "></span>
+                        <td ui-sref="viewUser({id:user._id})">{{user.firstName}}</td>
+                        <td ui-sref="viewUser({id:user._id})">{{user.lastName}}</td>
+                        <td ui-sref="viewUser({id:user._id})">{{user.title}}</td>
+                        <td ui-sref="viewUser({id:user._id})">{{user.location}}</td>
+                        <td ui-sref="viewUser({id:user._id})">{{user.lastUpdate}}</td>
+                        <td ui-sref=" editUser({id:user._id}) ">
+                            <span class="table-edit glyphicon glyphicon-edit" ></span>
                         </td>
-                        <td>
-                            <span class="table-remove glyphicon glyphicon-trash" ng-click="$ctrl.removeUser(user._id)"></span>
+                        <td ng-click="$ctrl.removeUser(user._id)">
+                            <span class="table-remove glyphicon glyphicon-trash" ></span>
                         </td>
                     </tr>
                     </tbody>

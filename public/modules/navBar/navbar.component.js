@@ -5,22 +5,46 @@ angular.module('consoleApp')
 
         templateUrl: 'modules/navBar/navbar.template.html',
 
-        controller:('navbarController' , ['$state',
+        controller:('navbarController' , [ '$state', 'authentication',
 
-            function($stateParams, $state, LoginService) {
-                //this.state= $state.current.name;
-
-                this.login = function () {
-                    if (LoginService.login(this.username, this.password)) {
-                        this.error = '';
-                        this.username = '';
-                        this.password = '';
-                        this.transitionTo('home');
-                    } else {
-                        this.error = "Incorrect username/password !";
-                    }
-                    ;
+            function ($state, authentication) {
+                this.authentication= authentication;
+                this.credentials = {
+                                    username : "",
+                                    email : "",
+                                    password : ""
+                                    };  
+                this.onSubmit = function () {
+                  authentication
+                    .login(this.credentials)
+                    .then(function(){
+                        $state.go('home');
+                    })
+                    .catch(function(err){
+                      alert(err);
+                    })
                 };
+
+                this.homeClicked = function () {
+                    if (this.isLoggedIn){
+                        $state.go('home');
+                    }
+                    else{
+                        $state.go('welcome');
+                    }
+
+                };
+
+                this.logout = function () {
+                    authentication.logout();
+                    this.isLoggedIn = authentication.isLoggedIn();
+                    $state.go('welcome');
+                };
+
+                this.isLoggedIn = authentication.isLoggedIn();
+                this.currentUser = authentication.currentUser();
+                
             }
+
         ])
     });

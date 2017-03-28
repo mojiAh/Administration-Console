@@ -1,0 +1,18 @@
+'use strict';
+
+angular.module('consoleApp')
+    .component('map', {
+
+        templateUrl: 'modules/googleMap/map.template.html',
+
+        controller:(
+            function() {
+                var mapCanvas = document.getElementById("map");
+                var mapOptions = {
+                    center: new google.maps.LatLng(51.5, -0.2),
+                    zoom: 10
+                };
+                var map = new google.maps.Map(mapCanvas, mapOptions);
+            }
+        )
+    });

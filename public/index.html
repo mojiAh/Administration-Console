@@ -17,7 +17,8 @@
 </head>
 <body>
 <nav-bar></nav-bar>
-<div ui-view></div>
+<side-bar></side-bar>
+<div ui-view ></div>
 
 
 <!-- The jQuery library -->
@@ -42,12 +43,34 @@
 <script src="js/app.module.js"></script>
 <script src="js/app.config.js"></script>
 
+
+<!-- authentication service -->
+<script src="modules/authentication/authenticate.service.js"></script>
+
+<!-- navigation bar -->
 <script src="modules/navBar/navbar.component.js"></script>
-<link href="modules/navBar/navbar.style.css" rel="stylesheet"/>
+
+<!-- sidebar -->
+<script src="modules/sidebar/sidebar.component.js"></script>
+<link href="modules/sidebar/sidebar.style.css" rel="stylesheet"/>
 
 <!-- welcome page -->
 <script src="modules/welcome/welcome.component.js"></script>
 <link href="modules/welcome/welcome.style.css" rel="stylesheet"/>
+
+<!-- home page -->
+<script src="modules/home/home.component.js"></script>
+
+<!-- calendar component -->
+<script src="modules/Calendar/calendar.component.js"></script>
+<link href="modules/Calendar/calendar.style.css" rel="stylesheet"/>
+
+<!-- map component -->
+<script src="modules/googleMap/map.component.js"></script>
+
+<!-- profile component -->
+<script src="modules/profile/profile.component.js"></script>
+
 
 <!-- register page -->
 <script src="modules/register/register.component.js"></script>
@@ -66,9 +89,9 @@
 <script src="modules/users/viewUser/view-user.component.js"></script>
 
 <script src="modules/graph/graph.directive.js"></script>
-<script src="modules/googleMap/map.directive.js"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAqFJf4-dlojl5jORdZhS211Mftj_Wc78&callback=myMap"></script>
 <script src="https://d3js.org/d3.v3.min.js" type="text/javascript"></script>
 
 </body>

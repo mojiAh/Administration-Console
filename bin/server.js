@@ -6,6 +6,7 @@ var app            = express();
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose	   = require('mongoose');
+var passport 		= require('passport');
 
 // configuration ===========================================
 
@@ -26,6 +27,23 @@ mongoose.connect(db[app.settings.env],function(err,response){ // "dev" or "test"
     }
 });
 
+//  Bring in the data model
+require('../server/routes/users/model');
+
+//	Bring in the Passport config after model is defined
+require('../server/routes/users/passport');
+
+// Bring in the data model
+app.use(passport.initialize());
+
+// error handlers
+// Catch unauthorised errors
+app.use(function (err, req, res, next) {
+  if (err.name === 'UnauthorizedError') {
+    res.status(401);
+    res.json({"message" : err.name + ": " + err.message});
+  }
+});
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json
@@ -44,7 +62,9 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + "/../public"));
 
 
+
 // routes ==================================================
+
 require('../server/routes/mainRouter')(app); // configure our routes
 
 // start app ===============================================

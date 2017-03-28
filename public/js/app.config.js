@@ -1,11 +1,8 @@
 'use strict';
-
-angular.module('consoleApp').
-    config(function config($stateProvider, $urlRouterProvider) {
+angular.module('consoleApp')
+    .config(function config($stateProvider, $urlRouterProvider) {
 
     // Specify your Client API domain here:
-
-    //STORMPATH_CONFIG.ENDPOINT_PREFIX = 'https://localhost.apps.stormpath.io';
 
     $urlRouterProvider.otherwise('/welcome');
 
@@ -21,9 +18,19 @@ angular.module('consoleApp').
             component: 'register'
         })
         .state({
+            name: 'profile',
+            url: '/profile',
+            component: 'profile'
+        })
+        .state({
             name: 'forgetPassword',
             url: '/forgetPassword',
             component: 'forgetPassword'
+        })
+        .state({
+            name: 'home',
+            url: '/home',
+            component: 'home'
         })
         .state({
             name: 'users',
@@ -46,14 +53,21 @@ angular.module('consoleApp').
             component: 'viewUser'
         });
 
+
     })
-    /*
-    .run(function($stormpath) {
-        $stormpath.uiRouter({
-            loginState: 'welcome',
-            defaultPostLoginState: 'users'
+    .run(function ($rootScope, $state, authentication) {
+        $rootScope.$on("$viewContentLoading", function(event, toState, toParams, fromState, fromParams){
+            if (toState.authenticate && !authentication.isLoggedIn()){
+                // User isn’t authenticated but authentication is needed
+                $state.go('welcome');
+                event.preventDefault();
+            }
+
+            if(authentication.isLoggedIn() && $state.current.name=== 'welcome'){
+                $state.go('home');
+            }
         });
-    })*/
-    ;
+    });
+    
 
 

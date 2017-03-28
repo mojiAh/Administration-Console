@@ -1,27 +1,38 @@
-<div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+<div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #555; width:100% ">
+    <div class="container-fluid">
         <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main" style="color: white; margin-right: 20px">
+                <span class="icon-bar" style="background-color:  white;"></span>
+                <span class="icon-bar" style="background-color: white;"></span>
+                <span class="icon-bar" style="background-color: white;"></span>
             </button>
-            <a class="navbar-brand" href="#">Smartiz</a>
+            <a class="navbar-brand" ng-click= "$ctrl.homeClicked()">Smartiz</a>
         </div>
-        <center>
-            <div class="navbar-collapse collapse" id="navbar-main" >
-                <form class="navbar-form navbar-right" role="search" ng-hide= "$ctrl.state =='welcome'"
-                      ng-submit="$ctrl.login()">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="username" placeholder="Username" ng-model="username">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="password" placeholder="Password" ng-model="password">
-                    </div>
-                    <button type="submit" class="btn btn-success" ui-sref="users">Sign In</button>
-                    <a ui-sref="register">Register</a>
-                </form>
+            <div class="collapse navbar-collapse" id="navbar-main">
+                <ul class="nav navbar-nav navbar-right" ng-hide = "$ctrl.authentication.isLoggedIn()">
+                    <li>
+                        <form class="navbar-form navbar-left" ng-submit="$ctrl.onSubmit()">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="username" placeholder="Username" ng-model="$ctrl.credentials.username">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password" placeholder="Password" ng-model="$ctrl.credentials.password">
+                            </div>
+                            <button type="submit" class="btn btn-success">Sign In</button>
+                        </form>
+                    </li>
+                    <li>
+                        <a ui-sref="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" ng-show= "$ctrl.authentication.isLoggedIn()">
+                    <li>
+                        <a ui-sref="profile"><span class="glyphicon glyphicon-user">{{ $ctrl.currentUser.name }}</a>
+                    </li>
+                    <li>
+                        <a ng-click= "$ctrl.logout()" ><span class="glyphicon glyphicon-log-in"></span>Logout</a>
+                    </li>
+                </ul>
             </div>
-        </center>
     </div>
 </div>

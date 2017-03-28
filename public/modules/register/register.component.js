@@ -5,31 +5,34 @@ angular.module('consoleApp')
 
         templateUrl: 'modules/register/register.template.html',
 
-        controller:('registerController' ,[ '$http', '$state',
+        controller:('registerController' ,['$state', 'authentication',
 
-            function ($http, $state) {
-                var newUser;
-                var req = {
-                    method: 'POST',
-                    url: 'api/users/register',
-                    headers: {
-                        'Content-Type': undefined
+            function ($state, authentication) {
+
+                this.credentials = {
+                                name : "",
+                                username: "",
+                                email : "",
+                                password : "",
+                                confirmPassword:""
+                                    };   
+
+                this.onSubmit = function () {
+                  if (this.credentials.password !== this.credentials.confirmPassword){
+                        alert("password and confirmPassword are not same!");
+                  } 
+                  else{ 
+                  authentication
+                    .register(this.credentials)
+                    .then(function(){
+                      $state.go('users');
                     },
-                    data: { username: newUser.username ,
-                            email: newUser.eamil ,
-                            name: newUser.name ,
-                            password : newUser.password }
-                };
-                    this.addUser = function () {
-                    console.log(req);
-                    $http(req).then(function(){
-                        $state.go('users');
-                    }, function(){
-
-                    });
-
-
+                    function(err){
+                      alert(err);
+                    })
+                    }
                 }
             }
+
         ])
     });

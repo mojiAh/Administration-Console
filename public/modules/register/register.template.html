@@ -1,15 +1,15 @@
-<div style="padding-top: 70px">
-    <div class="col-md-offset-4 col-md-4">
+<div id="RegisterPage" style=" padding-top:100px;">
+    <div style="max-width: 300px; margin: auto;" >
     <div class="row main">
         <div class="main-login main-center">
-            <form class="form-horizontal" ng-submit="$ctrl.addUser()">
+            <form ng-submit="$ctrl.onSubmit()" style="padding-left: 5px; padding-right: 5px;">
 
-                <div class="form-group">
-                    <label for="name" class="cols-sm-2 control-label">Your Name</label>
-                    <div class="cols-sm-10">
+                <div class="form-group" >
+                    <label for="name" class="control-label">Your Name</label>
+                    <div>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name" ng-model="$ctrl.newUser.name"/>
+                            <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name" ng-model="$ctrl.credentials.name"/>
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email" ng-model="$ctrl.newUser.email"/>
+                            <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email" ng-model="$ctrl.credentials.email"/>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username" ng-model="$ctrl.newUser.username"/>
+                            <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username" ng-model="$ctrl.credentials.username"/>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" ng-model="$ctrl.newUser.password"/>
+                            <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" ng-model="$ctrl.credentials.password"/>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password" ng-model="$ctrl.newUser.confirmPassword"/>
+                            <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password" ng-model="$ctrl.credentials.confirmPassword"/>
                         </div>
                     </div>
                 </div>

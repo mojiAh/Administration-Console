@@ -21,7 +21,6 @@ angular.module('users')
                         self.users = usersService.query();
                     }
                 }
-
             }
         ])
     });

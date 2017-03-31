@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('users')
+angular.module('consoleApp')
     .directive('bpmChart', function ($parse, $http) {
     var directiveDefinitionObject = {
         restrict: 'E',
@@ -50,11 +50,10 @@ angular.module('users')
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
             var ctr = 1;
-            // Moji here you an send the data to PlotData function via parameter and use it
-            // Moji get the data here and replace in variable data
-            // Example of json , you can make a functio and make call to read data
-            var data = [{date: 1413154800000, BPM : 123}, {date: 1413158400000, BPM: 90}];
-            // instead call this function getDataFromUrl() to get data
+
+            var data =  data = [{date: 1413154800000, BPM : 123}, {date: 1413158400000, BPM: 90},
+                {date: 1413158800000, BPM : 100}, {date: 1413159800000, BPM: 80}];
+
             plotData(data);
             // the interval is used to update data in graph
             // in data url you can show data of latest 20 minutes. with 1 min interval
@@ -173,11 +172,12 @@ angular.module('users')
 
             function getDataFromUrl(){
                 var data = "";
-                $http.get("http://bikramthapa.com.np").then(function(response) {
-                    //console.log(response.data);
-                    // after getting data replace above data here
-                    data = [{date: 1413154800000, BPM : 123}, {date: 1413158400000, BPM: 90}];
+                $http.get("").then(function(response) {
+
+                    data = [{date: 1413154800000, BPM : 93}, {date: 1413158400000, BPM: 90},
+                        {date: 1413158800000, BPM : 103}, {date: 1413159800000, BPM: 80}];
                 });
+
                 return data;
             }
 

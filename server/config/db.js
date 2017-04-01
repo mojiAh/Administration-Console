@@ -3,6 +3,6 @@
 // Database Config ==========================
 module.exports = {
     production: '',
-    development: 'mongodb://localhost/administrationConsole',
+    development: 'mongodb://moji:Silver123@ds131729.mlab.com:31729/administrationonsole',
     test: 'mongodb://localhost/administrationConsole-test'
 }

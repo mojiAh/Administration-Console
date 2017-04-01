@@ -4,5 +4,5 @@
 module.exports = {
     production: '',
     development: 'mongodb://moji:Silver123@ds131729.mlab.com:31729/administrationonsole',
-    test: 'mongodb://localhost/administrationConsole-test'
+    test: 'mongodb://moji:Silver123@ds131729.mlab.com:31729/administrationonsole'
 }

@@ -20,7 +20,7 @@ var port = process.env.PORT || 3000;
 mongoose.Promise = global.Promise;
 
 // connect to your mongoDB database
-mongoose.connect(db[app.settings.env],function(err,response){ // "dev" or "test" or "production"
+mongoose.connect('mongodb://moji:Silver123@ds131729.mlab.com:31729/administrationonsole',function(err,response){ // "dev" or "test" or "production"
     if(err) {
         console.error('Error connecting to Mongo');
         return;
